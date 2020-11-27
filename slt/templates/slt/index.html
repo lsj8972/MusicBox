@@ -1,0 +1,16 @@
+{% extends "base_slt.html" %}
+{% block content %}
+
+<h2>SLT Question List</h2>
+
+{% if latest_question_list %}
+<ul>
+    {% for question in latest_question_list %}
+    <li><a href="/slt/{{ question.id }}/">{{ question.question_text }}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No slt are available.</p>
+{% endif %}
+
+{% endblock content %}

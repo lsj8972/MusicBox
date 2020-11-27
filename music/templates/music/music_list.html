@@ -1,0 +1,9 @@
+{% extends "base_music.html" %}
+{% block content %}
+<h2>Music List</h2>
+<ul>
+    {% for music in object_list %}
+        <li><a href="{% url 'music:music_detail' music.id %}">{{ music.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock content %}

@@ -1,0 +1,14 @@
+{% extends "base_music.html" %}
+
+{% block content %}
+<h1>{{ object.title }}</h1>
+<br>
+<li>Artist:
+{% for artist in object.artist.all %}
+{{ artist }}
+{% if not forloop.last %},{% else %}{% endif %}
+{% endfor %}
+</li>
+<li>Entertainment: {{ object.entertainment }}</li>
+<li>Released date: {{ object.released_date }}</li>
+{% endblock content %}
